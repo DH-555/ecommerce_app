@@ -1,5 +1,6 @@
 // lib/providers/order_provider.dart
 import 'package:appwrite/appwrite.dart';
+import 'package:ecommerce_app/providers/appwrite_provider.dart';
 import 'package:ecommerce_app/providers/auth_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../services/order_service.dart';

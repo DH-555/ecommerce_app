@@ -1,4 +1,5 @@
 import 'package:appwrite/appwrite.dart';
+import 'package:ecommerce_app/providers/appwrite_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../services/cart_service.dart';
 import '../models/cart_model.dart';

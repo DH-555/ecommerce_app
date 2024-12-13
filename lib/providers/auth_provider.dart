@@ -1,20 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:appwrite/appwrite.dart';
-import '../constants/app_constants.dart';
-import '../services/auth_service.dart';
 import '../models/user_model.dart';
-
-// Provider to access Appwrite Client
-final appwriteClientProvider = Provider((ref) {
-  Client client = Client();
-  return client
-    .setEndpoint(AppConstants.endpoint)
-    .setProject(AppConstants.projectId);
-});
+import '../services/auth_service.dart';
+import 'appwrite_provider.dart'; // Importing appwrite_client_provider
 
 // Provider to access AuthService
 final authServiceProvider = Provider<AuthService>((ref) {
-  final client = ref.watch(appwriteClientProvider);
+  final client = ref.watch(appwriteClientProvider); // Using the client from appwriteClientProvider
   return AuthService(
     account: Account(client),
     databases: Databases(client),
